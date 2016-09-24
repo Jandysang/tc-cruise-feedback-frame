@@ -1,0 +1,237 @@
+.tc-cff- {
+    &wrapper {
+        outline: none;
+        .badge {
+            position: absolute;
+            color: #fff;
+            background-color: #f60 !important;
+            margin-top: -10px;
+            z-index: 999;
+            right: 0px;
+            opacity: .5;
+        }
+        .nav-tabs > li > a {
+            padding: 8px 24px;
+        }
+        .ui-dialog .ui-dialog-titlebar-close {
+            background: url(http://img1.40017.cn/cn/y/16/c/cnav-icon.png) no-repeat 3px 3px;
+            &:before {
+                display: none;
+            }
+        }
+        .ui-dialog .ui-dialog-titlebar {
+            background-color: #fff;
+        }
+        .ui-widget-header {
+            border-color: transparent;
+        }
+        .ui-dialog iframe.ui-dialog-content {
+            width: 100% !important;
+        }
+    }
+}
+
+.tc-cff-wrapper {
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    html,
+    body {
+        height: 100%
+    }
+    body {
+        font-family: 'Microsoft Yahei';
+    }
+    a {
+        display: block;
+    }
+    a:link,
+    a:hover,
+    a:visited,
+    a:active {
+        color: inherit;
+        text-decoration: none;
+    }
+    @mixin norTransi($names...) {
+        transition-property: $names;
+        transition-duration: 0.6s;
+        transition-timing-function: ease;
+        transition-delay: 0;
+    }
+    %icons {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        overflow: hidden;
+        position: absolute;
+        left: 25px;
+        top: 50%;
+        margin-top: -20px;
+        @include norTransi(all);
+    }
+    .icons-xuqiu {
+        @extend %icons;
+        background: url('../images/xuqiu.png') no-repeat;
+        background-size: 100% 100%;
+    }
+    .icons-huibao {
+        @extend %icons;
+        background: url('../images/huibao.png') no-repeat;
+        background-size: 100% 100%;
+    }
+    .icons-zhichi {
+        @extend %icons;
+        background: url('../images/qq.jpg') no-repeat;
+        background-size: 100% 100%;
+    }
+    .icons-tucao {
+        @extend %icons;
+        background: url('../images/tucao.png') no-repeat;
+        background-size: 100% 100%;
+    }
+    .icons-tel {
+        @extend %icons;
+        background: url('../images/phone.png') no-repeat;
+        background-size: 100% 100%;
+    }
+    .icons-ctrl {
+        @extend %icons;
+        background: url('../images/fu.png') no-repeat;
+        background-size: 100% 100%;
+    }
+    // @import 'icons';
+    .fix-right-ctrl {
+        position: fixed;
+        top: 100px;
+        left: auto;
+        right: 50px;
+        width: 50px;
+        height: 50px;
+        background-size: 100% 100%;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+        @include norTransi(all);
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+    .fix-right-ctrl.show {
+        right: 350px;
+    }
+    .fix-right {
+        position: fixed;
+        right: -300px;
+        top: 0;
+        padding: 20px;
+        background: #fff;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, .2);
+        width: 300px;
+        height: 100%;
+        box-sizing: border-box;
+        @include norTransi(all);
+    }
+    .fix-right.show {
+        right: 0;
+    }
+    .clearfix::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    .guanjia-header {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        text-align: center;
+        background: #fff;
+        position: relative;
+        z-index: 2;
+        box-shadow: 0 2px 3px rgba(0, 0, 0, .2);
+        &::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    }
+    .guanjia-logo {
+        float: left;
+        width: 100px;
+        height: 100px;
+        background: url('../images/logo.png') no-repeat;
+        background-size: 100% 100%;
+        margin-left: 50px;
+    }
+    .guanjia-title {
+        font-weight: 600;
+        margin-right: 20px;
+        margin-top: 20px;
+        line-height: 30px;
+        font-size: 24px;
+        letter-spacing: 5px;
+    }
+    .guanjian-content {
+        margin-top: 20px;
+    }
+    .guanjia-list {
+        line-height: 40px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: -20px;
+        margin-right: -20px;
+        position: relative;
+        padding: 0 20px 0 70px;
+        cursor: pointer;
+        @include norTransi(all);
+        span {
+            display: inline-block;
+            font-size: 20px;
+            position: relative;
+        }
+        &:hover {
+            background: #eee;
+            box-shadow: 0 2px 2px #eee;
+            i {
+                transform: rotateY(360deg);
+            }
+        }
+        .guanjia-new-tip {
+            position: absolute;
+            top: -20px;
+            right: 0;
+            color: red;
+            font-size: 14px;
+            font-weight: 600;
+            transform: translateX(50%);
+        }
+    }
+    .small {
+        color: #999;
+        font-size: 14px;
+        box-sizing: border-box;
+        padding-left: 50px;
+        margin-top: -10px;
+    }
+    .guanjian-bottom {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 20px;
+        border-top: 1px solid #eee;
+        box-sizing: border-box;
+    }
+    .guanjia-bottom-title {
+        position: absolute;
+        left: 50%;
+        top: -10px;
+        line-height: 20px;
+        font-size: 16px;
+        padding: 0 10px;
+        background: #fff;
+        transform: translateX(-50%);
+    }
+}
